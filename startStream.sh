@@ -18,3 +18,7 @@ docker run -d \
 	--name rtmp_stream \
 	-e "RTMP_DESTINATION=$RTMP_DESTINATION" \
 	rtmp_stream
+
+
+echo "Running rtmp_stream in Background. Logs (exit with ctrl-c):"
+docker logs -f rtmp_stream
