@@ -7,7 +7,4 @@ RUN apt update; \
 
 ADD BigBuckBunny_320x180.mp4 BigBuckBunny_320x180.mp4
 
-# CMD /bin/bash
-#CMD ffmpeg -re -i BigBuckBunny_320x180.mp4 -c copy -f flv rtmp://stream.demokratielive.org/lichtenberg/livestream
-# CMD ffmpeg -re -i BigBuckBunny_320x180.mp4 -c copy -f flv $RTMP_DESTINATION
 CMD ["sh", "-c", "ffmpeg -re -stream_loop -1 -i BigBuckBunny_320x180.mp4 -c copy -f flv ${RTMP_DESTINATION}"]
