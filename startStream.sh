@@ -11,14 +11,4 @@ fi
 
 RTMP_DESTINATION=$1
 
-docker build -t rtmp_stream .
-
-docker run -d \
-	--rm \
-	--name rtmp_stream \
-	-e "RTMP_DESTINATION=$RTMP_DESTINATION" \
-	rtmp_stream
-
-
-echo "Running rtmp_stream in Background. Logs (exit with ctrl-c):"
-docker logs -f rtmp_stream
+docker-compose up -d
